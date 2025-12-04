@@ -1,29 +1,12 @@
-<html>
-	<body>
-		<form method="post">
-			Enter Number:
-			<input type="number" name="num">
-			<input type="submit" name="submit" value="CLICK">
-			
-		
-		
-		</form>
+<?php 
+$person=array(
+	"Name"=>"MeetuBha",
+	"Age"=>"20",
+	"Email"=>"Meetu123@gmail.com",
+	"Contact"=>"9999988888");
 	
-	
-	</body>
-
-
-</html>
-<?php
-	if($_POST)
+	foreach($person as $key => $value)
 	{
-		$a = $_POST['num'];
-		for($i=0;$i<=$a;$i++)
-		{
-			if($i%2==0)
-				echo $i . ",";
-		}
+		echo $key.":".$value,"<br>";
 	}
-
-
 ?>

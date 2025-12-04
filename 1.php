@@ -1,23 +1,13 @@
-<html>
-	<body>
-		<form method="post">
-			Enter number:
-			<input type="text" name="num">
-			<input type="submit" name="submit" value="click">
-		</form>
-	</body>
-<html>
 <?php
-	if($_POST)
+	setcookie("username","welcome",time()+3600);
+	if(isset($_COOKIE["username"]))
 	{
-		$n=$_POST['num'];
-		if($n>0)
-			echo "Number $n is positive";
-		
-		else if($n<0)
-			echo "Number $n is negative";
-		
-		else
-			echo "Number $n is zero";
+		echo "The value of cookie is:" . $_COOKIE["username"];
 	}
+	else
+	{
+		echo "The cookie is not set";
+	}
+
+
 ?>

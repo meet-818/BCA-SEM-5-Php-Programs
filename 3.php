@@ -1,27 +1,19 @@
-<html>
-    <body>
-     <form method="post">
-       Enter Fibonacci size:
-           <input type="number"  name="fibonacci">
-		   <button name="Submit"value="Submit">Submit</button>   
-     </form>
-    </body>
-</html>
 <?php
-    if($_POST)
-    {
-        $num = $_POST['fibonacci'];
-        $a=0;
-        $b=1;
-        for($i=0;$i<=$num;$i++)
-        {
-            echo $a."<br>";
-            $c = $a + $b;
-            $a=$c;
-            $b=$c;
-            
-        }
-    }
+	session_start();
+	if(isset($_POST['loginid']))
+	{
+		$_SESSION['loginid']=$_POST['loginid'];
+		if(isset($_SESSION['loginid']))
+		{
+			$loginid = $_SESSION['loginid'];
+			echo "The login id is:" . $loginid;
+		}
+		else
+		{
+			echo "The login id variable not found";
+		}
+	}
+
 
 
 ?>
